@@ -1,10 +1,10 @@
-# docker box definition
 box: maven:3.3.9-jdk-8
 
-# defining the dev pipeline
 build:
   steps:
     - script:
       name: Building with maven
       code: |
         mvn clean install
+  services:
+    - marcopaga/analyze-runs:2
